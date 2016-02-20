@@ -91,6 +91,14 @@ df2 <- data.frame(
 )
 df2
 
+df3 <- data.frame(
+    nums = rnorm(100),
+    alpha = sample(LETTERS, 100, replace = TRUE),
+    logicals = sample(c(TRUE, FALSE), 100, replace = TRUE)
+)
+
+str(df3)
+
 ## Inspect
 
 stock.price
@@ -98,11 +106,88 @@ class(stock.price)
 
 str(yelp.data)
 
+v1 <- c(1L, 5L, 7L)
 
+v2 <- c(1, 3.14)
+
+class(v1)
+class(v2)
+
+class(df2)
+str(df2)
+
+rn <- rnorm(100)
+
+summary(rn)
+
+summary (mtcars)
+
+summary(df2)
+
+dim(df2)
 
 ## Add / Remove
 
+## vector add
+
+v1
+
+v1 <- c(v1, 6)
+
+v1
+v2
+
+c(v1, v2)
+
+## vector remove
+
+v1
+v1 <- v1[-3]
+v1
+
+## matrix add
+
+m1
+cbind(m1, 11:15)
+rbind(m1, 11:14)
+
+## matrix remove
+
+m1
+m1[-c(1,5),]
+m1[c(2:4),] 
+
+## dataframe
+
 ## Index / Subset
+
+## dataframe
+
+df2
+df2[,2]
+df2$text.values
+df2[,"text.values"]
+
+df3[,3]
+df3$logicals
 
 ## Filter
 
+## dataframe
+
+table(df3[,3])
+
+df3
+df3$logicals == TRUE
+df3[df3$logicals == TRUE,]
+str(df3)
+
+df3[c(1,2),]
+df3[c(TRUE, rep(FALSE, 99)), ]
+
+df3[df3$logicals == TRUE & df3$nums > 0, ]
+
+library(dpyr)
+df
+df %%
+    filter(logicals == TRUE, nums > 0)
