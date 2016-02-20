@@ -39,7 +39,66 @@ head(stata_data)
 
 ## Create
 
+## vector
+
+c(1, 2)
+
+c(TRUE, FALSE)
+
+c(1, 5.67)
+
+c(1L, 5L)
+
+vector.1 <- c(1, 5.67)
+
+## list
+
+list.1 <- list(vec.1 = rnorm(100),
+     vec.2 = rpois(200, lambda = 5))
+
+list.1 <- list(
+    vec.1 = rnorm(100),
+    vec.2 = rpois(200, lambda = 5)
+)
+list.1
+
+## matrix
+
+matrix(1:20)
+
+matrix(1:20, nrow = 5)
+
+matrix(1:20, nrow = 5, byrow = TRUE)
+
+matrix(1:20, nrow = 5, ncol = 6)
+
+m1 <- matrix(1:20, nrow = 5)
+m1
+
+t(m1)
+
+## data frame
+
+df <- data.frame(
+    norm.values = rnorm(100),
+    pois.value = rpois(100, lambda = 5)
+)
+df
+
+df2 <- data.frame(
+    norm.values = rnorm(100),
+    text.values = sample(LETTERS, 100, replace = TRUE)
+)
+df2
+
 ## Inspect
+
+stock.price
+class(stock.price)
+
+str(yelp.data)
+
+
 
 ## Add / Remove
 
