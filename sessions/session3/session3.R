@@ -47,4 +47,29 @@ apply(mtcars, 2, mean)
 
 apply(mtcars, 2, sd)
 
+### Plotting
 
+## histogram
+hist(rnorm(100))
+plot(density(rnorm(100)))
+
+rn <- rnorm(100)
+rp <- rpois(100, lambda = 5)
+rcombined <- c(sample(rn,50), sample(rp, 50))
+
+## density
+plot(density(rn))
+plot(density(rp))
+plot(density(rcombined))
+
+## scatterplot
+df <- data.frame(v1 = rnorm(100), v2 = rnorm(100))
+plot(df)
+plot(df$v1, df$v2)
+
+## line graph
+
+plot(df, type = "l", 
+     main = "diag title",
+     xlab = "vi var",
+     xlim = c(-1, 1))
